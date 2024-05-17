@@ -1,0 +1,212 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+header {
+    margin: 1% 25%; display: inline-block;
+    width: 50%;
+}
+header img {
+    width: 23%;
+    filter: contrast(150%) brightness(1.2);
+    shape-margin: 1rem; shape-outside: circle(3rem at 50% 50%);
+}
+header > .c_title {
+    font-family: 'Mukta', sans-serif;
+    text-align: center; margin: 1rem 0.2rem;
+    font-size: 1em;
+}
+main {
+    margin: 1.5% 10% 10%; font-size: 1.1em;
+    text-align: center;
+}
+.btns {
+    margin: 3rem;
+    display: flex; flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.btns a {
+    color: inherit; text-decoration: none;
+    font-family: 'Mukta', sans-serif; display: inline-block;
+    margin: 2rem;
+}
+.btns button {
+    background-color: lightyellow;
+    border: none;
+    font-size: 1.6rem; font-family: 'Mukta', sans-serif;
+    padding: 1rem; overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.btns button::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    height: 100%; width: 100%;
+    border-top: 0.4rem solid gold;
+    border-right: 0.4rem solid gold;
+    transition-duration: 1s;
+}
+.btns button::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    height: 100%; width: 100%;
+    border-bottom: 0.4rem solid gold;
+    border-left: 0.4rem solid gold;
+    transition-duration: 1s;
+}
+.btns button:hover, .btns a:active, .btns a button:hover {
+    background-color: brown; color: white;
+}
+.btns button:hover::after, .btns button:hover::before {
+    height: 55%; width: 40%;
+}
+footer {
+    position: fixed; bottom: 0; left: 0;
+    background-color: aliceblue; color: blue;
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.9em; font-weight: 100;
+}
+footer h1, footer h3 {
+    margin: 0.5rem;
+    letter-spacing: 0.2rem; word-spacing: 0.3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/**/
+
+#login_form, #admin_form {
+    border: 0.5rem solid rebeccapurple;
+    font-weight: bold; font-size: 32px;
+    position: absolute; top: 2%; left: 25%; text-align: left;
+    display: none;
+    background-color: white;
+    width: 40%;
+    margin: 2rem; padding: 3rem 1rem 1rem;
+}
+#login_form:target, #admin_form:target {
+    display: block;
+}
+.close {
+    float: right; margin: -3.5rem 0.3rem;
+    font-size: 3.5rem; font-weight: 900;
+    cursor: pointer; user-select: none;
+}
+.close a {
+    text-decoration: none;
+}
+.close a:hover, .close a:focus {
+    color: red;
+}
+.login_title{
+    display: block;
+    margin: 0 addto 2rem;
+    font-size: 3rem; text-align: center; font-style: oblique;
+    color: rebeccapurple;
+}
+.login_title:hover {
+    background-color: rebeccapurple; color: white;
+}
+#login_form label, #admin_form label {
+    font-size: 1.7rem;
+    margin: 1rem 0; padding-left: 0.7rem;
+    display: block;
+}
+#login_form label:focus-within, #admin_form label:focus, #admin_form label:focus-within, #admin_form label:focus {
+    background-color: lightgreen;
+}
+#login_form label input, #admin_form label input {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 1.3rem; text-transform: capitalize;
+    width: 50%;
+}
+#login_form label input:focus, #admin_form label input:focus {
+    background-color: lightcyan;
+}
+#login_form #login, #admin_form #login {
+    margin: 2rem 30%; padding: 1rem 1.7rem;
+    border: 0.3rem solid;
+    background-color: purple; color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+#login_form #login:hover, #login_form #login:focus, #admin_form #login:hover, #admin_form #login:focus {
+    background-color: white; color: purple;
+}
+/**/
+
+form {
+    width: 100%;
+    margin: 1rem addto;
+}
+form > h1 {
+    font-size: 3rem;
+    color: red;
+    margin: 1.5rem;
+    text-align: center;
+}
+form img {
+    width: 6rem;
+    filter: contrast(150%) brightness(1.2);
+    margin: 0.5rem;
+    vertical-align: middle;
+}
+form fieldset {
+    clear: left;
+    width: 90%;
+    margin: 2% 5%; padding: 1rem;
+    border: 0.3rem solid rebeccapurple;
+    background-color: white;
+    display: flex; flex-flow: row wrap;
+    justify-content: space-around;
+}
+fieldset legend {
+    text-align: center;
+    color: indigo; font-size: 2rem;
+}
+fieldset.add_form > label {
+    height: 5rem; width: 45%; overflow: hidden;
+    display: block;
+    margin: 1.5rem; padding: 0.8rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rebeccapurple;
+    box-shadow: 0 1px 5px purple ;
+    color: purple;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+fieldset.add_form input, fieldset.add_form select {
+    width: 70%;
+    margin-left: 0.2rem; padding: 0.6rem;
+    font-size: 1.2rem; border: none;
+    text-transform: capitalize;
+    color: royalblue;
+}
+fieldset.add_form input:focus, fieldset.add_form select:focus {
+    border: none; outline: none;
+    box-shadow: 0 0 0.7rem rgba(122, 2, 122, 0.5);
+}
+fieldset label#rad {
+    font-size: 2rem;
+    display: flex; flex-direction: row;
+    justify-content: space-around;
+}
+fieldset label#rad input {
+    height: 1rem; width: 1rem;
+    border-radius: 50%; 
+}
+.sub button {
+    margin: 2rem; padding: 1rem;
+    font-size: 2rem; 
+    color: white; background-color: rebeccapurple;
+    border: 0.3rem solid rebeccapurple;
+    border: none;
+}
+.sub button:hover {
+    background-color: #fff; color: indigo;
+    border: 0.3rem solid rebeccapurple;
+}
+
+
+
+
